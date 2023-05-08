@@ -2,28 +2,27 @@ package com.ing.zoo;
 
 import java.util.Random;
 
-public class Tiger {
-    public String name;
-    public String helloText;
-    public String eatText;
-    public String trick;
+public class Tiger extends TrickAnimal implements Carnivore {
 
-    public Tiger()
-    {
+    public Tiger(String name, String... tricks) {
+        super(name, tricks);
     }
 
+    @Override
     public void sayHello()
     {
         helloText = "rraaarww";
-        System.out.println(helloText);
+        super.sayHello();
     }
 
+    @Override
     public void eatMeat()
     {
-        eatText = "nomnomnom oink wubalubadubdub";
-        System.out.println(eatText);
+        eatText = "nomnomnom oink wubalubadubdub"; // yea I get the rick and morty ref here hehe
+        System.out.println(name + ": " + eatText);
     }
 
+    /*
     public void performTrick()
     {
         Random random = new Random();
@@ -38,4 +37,5 @@ public class Tiger {
         }
         System.out.println(trick);
     }
+     */
 }
